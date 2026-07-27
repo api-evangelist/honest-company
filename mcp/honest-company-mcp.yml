@@ -1,0 +1,52 @@
+generated: '2026-07-19'
+method: searched
+status: published
+source: https://honest.com/agents.md
+notes: >-
+  honest.com implements the Universal Commerce Protocol (UCP, https://ucp.dev)
+  and exposes a live hosted MCP endpoint for agent-driven commerce. The endpoint
+  responds to JSON-RPC over HTTP POST (verified live: it returns structured
+  JSON-RPC errors). A full tools/list enumeration requires a valid UCP agent
+  profile URI in the request, so the tool surface below is transcribed from the
+  provider-published /agents.md typical-agent-flow and the /.well-known/ucp
+  capability list rather than from a completed tools/list handshake. This MCP
+  server is provided by the Shopify UCP platform on the honest.com domain.
+server:
+  name: honest-company-ucp-shopping
+  protocol: UCP (Universal Commerce Protocol)
+  transport: http
+  url: https://honest.com/api/ucp/mcp
+  discovery: https://honest.com/.well-known/ucp
+  content_type: application/json
+  ucp_versions:
+  - '2026-04-08'
+  - '2026-01-23'
+  auth: >-
+    Read-only catalog browsing is unauthenticated; checkout requires
+    contemporaneous buyer approval (buyer-approved payment invariant). Shop Pay
+    identity/payment reuse via the Shop skill (https://shop.app/SKILL.md).
+capabilities:
+- dev.ucp.shopping.catalog.search
+- dev.ucp.shopping.catalog.lookup
+- dev.ucp.shopping.cart
+- dev.ucp.shopping.checkout
+- dev.ucp.shopping.fulfillment
+- dev.ucp.shopping.discount
+- dev.ucp.shopping.order
+- dev.shopify.catalog
+tools:
+- name: search_catalog
+  description: Find products matching the buyer's intent.
+  source: agents.md typical-agent-flow
+- name: create_cart
+  description: Create a cart and add desired items.
+  source: agents.md typical-agent-flow
+- name: create_checkout
+  description: Start the purchase flow for a cart.
+  source: agents.md typical-agent-flow
+- name: update_checkout
+  description: Set shipping address and method on a checkout.
+  source: agents.md typical-agent-flow
+- name: complete_checkout
+  description: Finalize the purchase (buyer must approve payment).
+  source: agents.md typical-agent-flow

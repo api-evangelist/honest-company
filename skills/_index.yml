@@ -1,0 +1,22 @@
+generated: '2026-07-19'
+method: searched
+source: https://honest.com/agents.md
+notes: >-
+  The provider publishes its own agent operating instructions at
+  /agents.md (byte-identical to /llms.txt). Saved verbatim. This is a
+  provider-published agent guide, not a generated Agent Skill — there is no
+  first-party OpenAPI to ground synthetic skills in.
+skills:
+- file: honest-company-agents.md
+  name: The Honest Company — Agent Instructions
+  description: >-
+    Provider-published guidance for AI agents transacting with the honest.com
+    Shopify storefront via the Universal Commerce Protocol (UCP) shopping MCP
+    endpoint, plus read-only product/collection browsing endpoints.
+  api: mcp/honest-company-mcp.yml
+  operations:
+  - search_catalog
+  - create_cart
+  - create_checkout
+  - update_checkout
+  - complete_checkout

@@ -1,0 +1,34 @@
+generated: '2026-07-19'
+method: searched
+source: https://honest.com/
+host: https://honest.com
+notes: >-
+  honest.com runs on Shopify. The OIDC discovery and OAuth authorization-server
+  documents are served identically (byte-for-byte) and describe the Shopify
+  Customer Account API authorization server. No /.well-known/security.txt,
+  /api-catalog, or /ai-plugin.json is published. In addition to the RFC-defined
+  paths, the store publishes a Universal Commerce Protocol (UCP) merchant
+  profile at /.well-known/ucp and agent guides at /agents.md and /llms.txt.
+documents:
+- path: /.well-known/openid-configuration
+  status: 200
+  file: honest-company-openid-configuration.json
+- path: /.well-known/oauth-authorization-server
+  status: 200
+  file: honest-company-oauth-authorization-server.json
+- path: /.well-known/ucp
+  status: 200
+  file: honest-company-ucp.json
+- path: /.well-known/security.txt
+  status: 404
+- path: /.well-known/api-catalog
+  status: 404
+- path: /.well-known/ai-plugin.json
+  status: 404
+related_agent_surfaces:
+- path: /agents.md
+  status: 200
+  file: ../skills/honest-company-agents.md
+- path: /llms.txt
+  status: 200
+  file: ../llms/honest-company-llms.txt
