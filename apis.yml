@@ -38,6 +38,18 @@ modified: '2026-07-19'
 tags:
 - Company
 - Consumer Goods
+- E-Commerce
+- Retail
+- Baby Care
+- Personal Care
+- Beauty
+- Shopify
+- Agentic Commerce
+- MCP
+- UCP
+tags_raw:
+- Company
+- Consumer Goods
 - E-commerce
 - Retail
 - Baby Care
@@ -60,6 +72,11 @@ apis:
   - Agentic Commerce
   - MCP
   - UCP
+  - E-Commerce
+  tags_raw:
+  - Agentic Commerce
+  - MCP
+  - UCP
   - E-commerce
   properties:
   - type: MCPServer
@@ -76,6 +93,9 @@ apis:
   humanURL: https://honest.com/account/login
   baseURL: https://shopify.com/authentication/64768475320
   tags:
+  - Authentication
+  - OpenID Connect
+  tags_raw:
   - OAuth2
   - OpenID Connect
   - Authentication
