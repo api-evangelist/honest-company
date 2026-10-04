@@ -96,6 +96,9 @@ apis:
     url: well-known/honest-company-well-known.yml
   - type: LLMsTxt
     url: llms/honest-company-llms.txt
+  x-surface: platform-generated
+  x-platform: shopify
+  x-platform-surface: ucp
 - name: Shopify Customer Account API (OAuth2 / OIDC)
   description: >-
     honest.com authenticates shoppers through the Shopify Customer Account API,
@@ -115,6 +118,9 @@ apis:
     url: authentication/honest-company-authentication.yml
   - type: OAuthScopes
     url: scopes/honest-company-scopes.yml
+  x-surface: platform-generated
+  x-platform: shopify
+  x-platform-surface: customer-account
 common:
 - type: Website
   url: https://honest.com
